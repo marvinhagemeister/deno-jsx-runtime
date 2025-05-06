@@ -169,6 +169,55 @@ declare namespace JSX {
     T extends EventTarget = HTMLAnchorElement,
   > extends JSXInternal.AnchorHTMLAttributes<T> {
   }
+
+  export interface AreaHTMLAttributes<T extends EventTarget = HTMLAreaElement>
+    extends JSXInternal.AreaHTMLAttributes<T> {
+  }
+
+  export interface AudioHTMLAttributes<T extends EventTarget = HTMLAudioElement>
+    extends JSXInternal.AudioHTMLAttributes<T> {
+  }
+
+  export interface BaseHTMLAttributes<T extends EventTarget = HTMLBaseElement>
+    extends JSXInternal.BaseHTMLAttributes<T> {
+  }
+
+  export interface BlockquoteHTMLAttributes<
+    T extends EventTarget = HTMLQuoteElement,
+  > extends JSXInternal.BlockquoteHTMLAttributes<T> {
+  }
+
+  export interface ButtonHTMLAttributes<
+    T extends EventTarget = HTMLButtonElement,
+  > extends JSXInternal.ButtonHTMLAttributes<T> {
+  }
+
+  export interface CanvasHTMLAttributes<
+    T extends EventTarget = HTMLCanvasElement,
+  > extends JSXInternal.CanvasHTMLAttributes<T> {
+  }
+
+  export interface ColHTMLAttributes<
+    T extends EventTarget = HTMLTableColElement,
+  > extends JSXInternal.ColHTMLAttributes<T> {
+  }
+
+  export interface ColgroupHTMLAttributes<
+    T extends EventTarget = HTMLTableColElement,
+  > extends JSXInternal.ColgroupHTMLAttributes<T> {
+  }
+
+  export interface DataHTMLAttributes<
+    T extends EventTarget = HTMLDataElement,
+  > extends JSXInternal.DataHTMLAttributes<T> {
+  }
+
+  export interface DelHTMLAttributes<
+    T extends EventTarget = HTMLModElement,
+  > extends JSXInternal.DelHTMLAttributes<T> {
+  }
+
+  export interface IntrinsicElements extends JSXInternal.IntrinsicElements {}
 }
 
 const $$_TYPEOF = Symbol.for("deno.jsx");
