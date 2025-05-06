@@ -217,7 +217,16 @@ declare namespace JSX {
   > extends JSXInternal.DelHTMLAttributes<T> {
   }
 
-  export interface IntrinsicElements extends JSXInternal.IntrinsicElements {}
+  export interface IntrinsicSVGElements
+    extends JSXInternal.IntrinsicSVGElements {}
+
+  export interface IntrinsicMathMLElements
+    extends JSXInternal.IntrinsicMathMLElements {}
+
+  export interface IntrinsicElements
+    extends IntrinsicSVGElements, IntrinsicMathMLElements {
+    a: AnchorHTMLAttributes<HTMLAnchorElement>;
+  }
 }
 
 const $$_TYPEOF = Symbol.for("deno.jsx");
