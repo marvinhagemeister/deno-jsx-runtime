@@ -1,9 +1,7 @@
 import type {
   Attributes,
-  Component,
   ComponentClass,
   ComponentType,
-  EmptyObj,
   FunctionComponent,
   JSXInternal,
   JSXNode,
@@ -11,223 +9,7 @@ import type {
 } from "./jsx.d.ts";
 import { escape } from "@std/html";
 
-declare namespace JSX {
-  export type LibraryManagedAttributes<Component, Props> =
-    JSXInternal.LibraryManagedAttributes<Component, Props>;
-
-  export interface IntrinsicAttributes
-    extends JSXInternal.IntrinsicAttributes {}
-
-  // deno-lint-ignore no-explicit-any
-  export type ElementType<P = any> = JSXInternal.ElementType<P>;
-
-  export interface Element extends JSXInternal.Element {}
-  export type ElementClass =
-    // deno-lint-ignore no-explicit-any
-    | Component<any>
-    // deno-lint-ignore no-explicit-any
-    | FunctionComponent<any>;
-
-  export interface ElementAttributesProperty
-    extends JSXInternal.ElementAttributesProperty {
-  }
-
-  export interface DOMCSSProperties extends JSXInternal.DOMCSSProperties {
-  }
-  export type AllCSSProperties = JSXInternal.AllCSSProperties;
-  export interface CSSProperties extends JSXInternal.CSSProperties {
-  }
-  export interface SVGAttributes<Target extends EventTarget = SVGElement>
-    extends JSXInternal.SVGAttributes<Target> {}
-  export interface PathAttributes extends JSXInternal.PathAttributes {
-  }
-
-  export type TargetedEvent<
-    Target extends EventTarget = EventTarget,
-    TypedEvent extends Event = Event,
-  > = JSXInternal.TargetedEvent<Target, TypedEvent>;
-
-  export type TargetedAnimationEvent<Target extends EventTarget> =
-    JSXInternal.TargetedAnimationEvent<Target>;
-  export type TargetedClipboardEvent<Target extends EventTarget> =
-    JSXInternal.TargetedClipboardEvent<Target>;
-  export type TargetedCommandEvent<Target extends EventTarget> =
-    JSXInternal.TargetedCommandEvent<
-      Target
-    >;
-  export type TargetedCompositionEvent<Target extends EventTarget> =
-    JSXInternal.TargetedCompositionEvent<Target>;
-  export type TargetedDragEvent<Target extends EventTarget> =
-    JSXInternal.TargetedDragEvent<
-      Target
-    >;
-  export type TargetedFocusEvent<Target extends EventTarget> =
-    JSXInternal.TargetedFocusEvent<
-      Target
-    >;
-  export type TargetedInputEvent<Target extends EventTarget> =
-    JSXInternal.TargetedInputEvent<
-      Target
-    >;
-  export type TargetedKeyboardEvent<Target extends EventTarget> =
-    JSXInternal.TargetedKeyboardEvent<
-      Target
-    >;
-  export type TargetedMouseEvent<Target extends EventTarget> =
-    JSXInternal.TargetedMouseEvent<
-      Target
-    >;
-  export type TargetedPointerEvent<Target extends EventTarget> =
-    JSXInternal.TargetedPointerEvent<
-      Target
-    >;
-  export type TargetedSubmitEvent<Target extends EventTarget> =
-    JSXInternal.TargetedSubmitEvent<
-      Target
-    >;
-  export type TargetedTouchEvent<Target extends EventTarget> =
-    JSXInternal.TargetedTouchEvent<
-      Target
-    >;
-  export type TargetedToggleEvent<Target extends EventTarget> =
-    JSXInternal.TargetedToggleEvent<
-      Target
-    >;
-  export type TargetedTransitionEvent<Target extends EventTarget> =
-    JSXInternal.TargetedTransitionEvent<Target>;
-  export type TargetedUIEvent<Target extends EventTarget> =
-    JSXInternal.TargetedUIEvent<
-      Target
-    >;
-  export type TargetedWheelEvent<Target extends EventTarget> =
-    JSXInternal.TargetedWheelEvent<
-      Target
-    >;
-  export type TargetedPictureInPictureEvent<Target extends EventTarget> =
-    JSXInternal.TargetedPictureInPictureEvent<Target>;
-
-  export type EventHandler<E extends TargetedEvent> = JSXInternal.EventHandler<
-    E
-  >;
-
-  export type AnimationEventHandler<Target extends EventTarget> =
-    JSXInternal.AnimationEventHandler<Target>;
-  export type ClipboardEventHandler<Target extends EventTarget> =
-    JSXInternal.ClipboardEventHandler<Target>;
-  export type CommandEventHandler<Target extends EventTarget> =
-    JSXInternal.CommandEventHandler<Target>;
-  export type CompositionEventHandler<Target extends EventTarget> =
-    JSXInternal.CompositionEventHandler<Target>;
-  export type DragEventHandler<Target extends EventTarget> =
-    JSXInternal.DragEventHandler<Target>;
-  export type ToggleEventHandler<Target extends EventTarget> =
-    JSXInternal.ToggleEventHandler<Target>;
-  export type FocusEventHandler<Target extends EventTarget> =
-    JSXInternal.FocusEventHandler<Target>;
-  export type GenericEventHandler<Target extends EventTarget> =
-    JSXInternal.GenericEventHandler<Target>;
-  export type InputEventHandler<Target extends EventTarget> =
-    JSXInternal.InputEventHandler<Target>;
-  export type KeyboardEventHandler<Target extends EventTarget> =
-    JSXInternal.KeyboardEventHandler<Target>;
-  export type MouseEventHandler<Target extends EventTarget> =
-    JSXInternal.MouseEventHandler<Target>;
-  export type PointerEventHandler<Target extends EventTarget> =
-    JSXInternal.PointerEventHandler<Target>;
-  export type SubmitEventHandler<Target extends EventTarget> =
-    JSXInternal.SubmitEventHandler<Target>;
-  export type TouchEventHandler<Target extends EventTarget> =
-    JSXInternal.TouchEventHandler<Target>;
-  export type TransitionEventHandler<Target extends EventTarget> =
-    JSXInternal.TransitionEventHandler<Target>;
-  export type UIEventHandler<Target extends EventTarget> =
-    JSXInternal.UIEventHandler<Target>;
-  export type WheelEventHandler<Target extends EventTarget> =
-    JSXInternal.WheelEventHandler<Target>;
-  export type PictureInPictureEventHandler<Target extends EventTarget> =
-    JSXInternal.PictureInPictureEventHandler<Target>;
-
-  export interface DOMAttributes<Target extends EventTarget>
-    extends JSXInternal.DOMAttributes<Target> {}
-
-  export interface AriaAttributes extends JSXInternal.AriaAttributes {}
-  export type WAIAriaRole = JSXInternal.WAIAriaRole;
-  export type DPubAriaRole = JSXInternal.DPubAriaRole;
-  export type AriaRole = JSXInternal.AriaRole;
-
-  export interface AllHTMLAttributes<RefType extends EventTarget = EventTarget>
-    extends JSXInternal.AllHTMLAttributes<RefType> {}
-
-  export interface HTMLAttributes<RefType extends EventTarget = EventTarget>
-    extends JSXInternal.HTMLAttributes<RefType> {}
-
-  export type HTMLAttributeReferrerPolicy =
-    JSXInternal.HTMLAttributeReferrerPolicy;
-  export type HTMLAttributeAnchorTarget = JSXInternal.HTMLAttributeAnchorTarget;
-
-  export interface AnchorHTMLAttributes<
-    T extends EventTarget = HTMLAnchorElement,
-  > extends JSXInternal.AnchorHTMLAttributes<T> {
-  }
-
-  export interface AreaHTMLAttributes<T extends EventTarget = HTMLAreaElement>
-    extends JSXInternal.AreaHTMLAttributes<T> {
-  }
-
-  export interface AudioHTMLAttributes<T extends EventTarget = HTMLAudioElement>
-    extends JSXInternal.AudioHTMLAttributes<T> {
-  }
-
-  export interface BaseHTMLAttributes<T extends EventTarget = HTMLBaseElement>
-    extends JSXInternal.BaseHTMLAttributes<T> {
-  }
-
-  export interface BlockquoteHTMLAttributes<
-    T extends EventTarget = HTMLQuoteElement,
-  > extends JSXInternal.BlockquoteHTMLAttributes<T> {
-  }
-
-  export interface ButtonHTMLAttributes<
-    T extends EventTarget = HTMLButtonElement,
-  > extends JSXInternal.ButtonHTMLAttributes<T> {
-  }
-
-  export interface CanvasHTMLAttributes<
-    T extends EventTarget = HTMLCanvasElement,
-  > extends JSXInternal.CanvasHTMLAttributes<T> {
-  }
-
-  export interface ColHTMLAttributes<
-    T extends EventTarget = HTMLTableColElement,
-  > extends JSXInternal.ColHTMLAttributes<T> {
-  }
-
-  export interface ColgroupHTMLAttributes<
-    T extends EventTarget = HTMLTableColElement,
-  > extends JSXInternal.ColgroupHTMLAttributes<T> {
-  }
-
-  export interface DataHTMLAttributes<
-    T extends EventTarget = HTMLDataElement,
-  > extends JSXInternal.DataHTMLAttributes<T> {
-  }
-
-  export interface DelHTMLAttributes<
-    T extends EventTarget = HTMLModElement,
-  > extends JSXInternal.DelHTMLAttributes<T> {
-  }
-
-  export interface IntrinsicSVGElements
-    extends JSXInternal.IntrinsicSVGElements {}
-
-  export interface IntrinsicMathMLElements
-    extends JSXInternal.IntrinsicMathMLElements {}
-
-  export interface IntrinsicElements
-    extends IntrinsicSVGElements, IntrinsicMathMLElements {
-    a: AnchorHTMLAttributes<HTMLAnchorElement>;
-  }
-}
+export type { JSXInternal as JSX };
 
 const $$_TYPEOF = Symbol.for("deno.jsx");
 const VOID_ELEMENTS = new Set<string>(
@@ -265,7 +47,8 @@ function isFunctionComponent<P>(type: unknown): type is FunctionComponent<P> {
   return typeof type === "function" && !("render" in type);
 }
 
-export class VNode<P = EmptyObj> implements IVNode<P> {
+// deno-lint-ignore no-explicit-any
+export class VNode<P = any> implements IVNode<P> {
   $$typeof = $$_TYPEOF;
 
   constructor(
@@ -378,8 +161,8 @@ export function createElement(
   type: string,
   props:
     | null
-    | JSX.HTMLAttributes
-      & JSX.SVGAttributes
+    | JSXInternal.HTMLAttributes
+      & JSXInternal.SVGAttributes
       & Record<string, unknown>
       & {
         children?: JSXNode;
@@ -391,7 +174,8 @@ export function createElement<P>(
   props: null | Attributes & P & { children?: JSXNode },
   key?: string,
 ): VNode<P>;
-export function createElement<P = EmptyObj>(
+// deno-lint-ignore no-explicit-any
+export function createElement<P = any>(
   type: string | ComponentType<P>,
   props: null | P,
   children?: JSXNode,
@@ -421,8 +205,8 @@ export function jsx(
   type: string,
   props:
     | null
-    | JSX.HTMLAttributes
-      & JSX.SVGAttributes
+    | JSXInternal.HTMLAttributes
+      & JSXInternal.SVGAttributes
       & Record<string, unknown>
       & {
         children?: JSXNode;

@@ -1,5 +1,6 @@
 type Defaultize<Props, Defaults> =
   // Distribute over unions
+  // deno-lint-ignore no-explicit-any
   Props extends any // Make any properties included in Default optional
     ?
       & Partial<Pick<Props, Extract<keyof Props, keyof Defaults>>>
@@ -19,6 +20,7 @@ interface ToggleEvent extends Event {
   readonly oldState: string;
 }
 
+// deno-lint-ignore no-var
 declare var ToggleEvent: {
   prototype: ToggleEvent;
   new (type: string, eventInitDict?: ToggleEventInit): ToggleEvent;
@@ -39,6 +41,7 @@ interface CommandEvent extends Event {
   readonly command: string;
 }
 
+// deno-lint-ignore no-var
 declare var CommandEvent: {
   prototype: CommandEvent;
   new (type: string, eventInitDict?: CommandEventInit): CommandEvent;
@@ -62,8 +65,10 @@ export interface Attributes {
   jsx?: boolean | undefined;
 }
 
-export interface VNode<P = EmptyObj> {
+// deno-lint-ignore no-explicit-any
+export interface VNode<P = any> {
   $$typeof: symbol;
+  type: string | ComponentType<P>;
   props: P & Attributes;
   key: string | number | undefined;
   [Symbol.toPrimitive](): string;
@@ -79,17 +84,21 @@ export type JSXNode =
   | VNode
   | JSXNode[];
 
-export type EmptyObj = Record<string | number | symbol, never>;
-
-export interface Component<_P = EmptyObj> {
+// deno-lint-ignore no-explicit-any
+export interface Component<_P = any> {
   render(): VNode | null;
 }
-export interface ComponentClass<P = EmptyObj> {
+// deno-lint-ignore no-explicit-any
+export interface ComponentClass<P = any> {
   new (props: P): Component<P>;
 }
-export type FunctionComponent<P = EmptyObj> = (props: P) => VNode | null;
+// deno-lint-ignore no-explicit-any
+export type FunctionComponent<P = any | null> = (props: P) => VNode | null;
 
-export type ComponentType<P = EmptyObj> = Component<P>;
+// deno-lint-ignore no-explicit-any
+export type ComponentType<P = any> =
+  | ComponentClass<P>
+  | FunctionComponent<P>;
 
 export namespace JSXInternal {
   export type LibraryManagedAttributes<Component, Props> = Component extends {
@@ -100,6 +109,8 @@ export namespace JSXInternal {
   export interface IntrinsicAttributes {
     // deno-lint-ignore no-explicit-any
     key?: any;
+    // deno-lint-ignore no-explicit-any
+    children?: any;
   }
 
   // deno-lint-ignore no-explicit-any
@@ -110,8 +121,7 @@ export namespace JSXInternal {
     }[keyof IntrinsicElements]
     | ComponentType<P>;
   export interface Element extends VNode {}
-  // deno-lint-ignore no-explicit-any
-  export type ElementClass = Component<any> | FunctionComponent<any>;
+  export type ElementClass = Component | FunctionComponent;
 
   export interface ElementAttributesProperty {
     // deno-lint-ignore no-explicit-any
@@ -1573,6 +1583,7 @@ export namespace JSXInternal {
     | "_blank"
     | "_parent"
     | "_top"
+    // deno-lint-ignore ban-types
     | (string & {});
 
   interface AnchorHTMLAttributes<T extends EventTarget = HTMLAnchorElement>
@@ -1768,6 +1779,7 @@ export namespace JSXInternal {
     | "time"
     | "url"
     | "week"
+    // deno-lint-ignore ban-types
     | (string & {});
 
   interface InputHTMLAttributes<T extends EventTarget = HTMLInputElement>
