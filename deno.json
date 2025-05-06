@@ -1,6 +1,6 @@
 {
   "name": "@marvinh-test/raw-jsx-runtime",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "exports": {
     "./jsx-runtime": "./src/jsx-runtime.ts",
