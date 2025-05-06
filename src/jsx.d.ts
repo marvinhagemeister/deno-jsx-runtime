@@ -68,6 +68,8 @@ export interface Attributes {
 export interface VNode<P = EmptyObj> {
   $$typeof: symbol;
   props: P & Attributes;
+  key: string | number | undefined;
+  [Symbol.toPrimitive](): string;
 }
 
 export type JsxNode =

@@ -11,7 +11,6 @@ import type {
 import { encodeEntities } from "./utils.ts";
 
 const $$_TYPEOF = Symbol.for("deno.jsx");
-const JSX_TO_STRING = Symbol.for("deno.jsxToString");
 const VOID_ELEMENTS = new Set<string>(
   [
     "area",
@@ -56,18 +55,23 @@ export class VNode<P = EmptyObj> implements IVNode<P> {
     public key: string | number | undefined,
   ) {}
 
-  [JSX_TO_STRING](): string {
+  [Symbol.toPrimitive](): string {
+    console.log("To string");
+    return this.#renderToString();
+  }
+
+  #renderToString(): string {
     const { type, props } = this;
 
     if (isComponentClass(type)) {
       const component = new type(props);
       const result = component.render();
-      // deno-lint-ignore no-explicit-any
-      return ((result as any)[JSX_TO_STRING])();
+      if (result === null) return "";
+      return result[Symbol.toPrimitive]();
     } else if (isFunctionComponent(type)) {
       const result = type(props);
-      // deno-lint-ignore no-explicit-any
-      return ((result as any)[JSX_TO_STRING])();
+      if (result === null) return "";
+      return result[Symbol.toPrimitive]();
     } else if (typeof type === "string") {
       let s = `<${this.type}`;
 
@@ -132,7 +136,7 @@ function renderChild(child: JsxNode): string {
     }
     return s;
   } else if (isValidElement(child)) {
-    return child[JSX_TO_STRING]();
+    return child[Symbol.toPrimitive]();
   }
 
   throw new Error(`Trying to inject invalid JSX child: ${child}`);
