@@ -3,6 +3,7 @@
   "specifiers": {
     "jsr:@std/assert@^1.0.12": "1.0.13",
     "jsr:@std/expect@1": "1.0.15",
+    "jsr:@std/html@^1.0.3": "1.0.3",
     "jsr:@std/internal@^1.0.6": "1.0.6"
   },
   "jsr": {
@@ -19,13 +20,17 @@
         "jsr:@std/internal"
       ]
     },
+    "@std/html@1.0.3": {
+      "integrity": "7a0ac35e050431fb49d44e61c8b8aac1ebd55937e0dc9ec6409aa4bab39a7988"
+    },
     "@std/internal@1.0.6": {
       "integrity": "9533b128f230f73bd209408bb07a4b12f8d4255ab2a4d22a1fd6d87304aca9a4"
     }
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/expect@1"
+      "jsr:@std/expect@1",
+      "jsr:@std/html@^1.0.3"
     ]
   }
 }

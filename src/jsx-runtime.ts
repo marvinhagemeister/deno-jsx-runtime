@@ -8,7 +8,7 @@ import type {
   JsxNode,
   VNode as IVNode,
 } from "./jsx.d.ts";
-import { encodeEntities } from "./utils.ts";
+import { escape } from "@std/html";
 
 const $$_TYPEOF = Symbol.for("deno.jsx");
 const VOID_ELEMENTS = new Set<string>(
@@ -103,7 +103,7 @@ export class VNode<P = EmptyObj> implements IVNode<P> {
           continue;
         }
 
-        s += ` ${encodeEntities(name)}="${encodeEntities(String(value))}"`;
+        s += ` ${escape(name)}="${escape(String(value))}"`;
       }
 
       if (VOID_ELEMENTS.has(type)) {
@@ -140,7 +140,7 @@ function renderChild(child: JsxNode): string {
     typeof child === "string" || typeof child === "number" ||
     typeof child === "bigint"
   ) {
-    return encodeEntities(String(child));
+    return escape(String(child));
   } else if (Array.isArray(child)) {
     let s = "";
     for (let i = 0; i < child.length; i++) {
@@ -261,7 +261,7 @@ export function jsxAttr(name: string, value: unknown): string {
 
   if (value === true) return name;
 
-  return `${encodeEntities(name)}="${encodeEntities(String(value))}"`;
+  return `${escape(name)}="${escape(String(value))}"`;
 }
 
 export function jsxEscape(
@@ -286,5 +286,5 @@ export function jsxEscape(
     }
   }
 
-  return encodeEntities("" + value);
+  return escape(String(value));
 }
