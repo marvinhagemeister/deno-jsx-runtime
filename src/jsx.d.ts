@@ -50,14 +50,14 @@ interface CommandEventInit extends EventInit {
 }
 
 export interface CustomDOMAttributes {
-  children?: JsxNode;
+  children?: JSXNode;
   dangerouslySetInnerHTML?: {
     __html: string;
   };
 }
 
 export interface Attributes {
-  children?: JsxNode;
+  children?: JSXNode;
   key?: string | number | undefined;
   jsx?: boolean | undefined;
 }
@@ -69,7 +69,7 @@ export interface VNode<P = EmptyObj> {
   [Symbol.toPrimitive](): string;
 }
 
-export type JsxNode =
+export type JSXNode =
   | string
   | number
   | null
@@ -77,7 +77,7 @@ export type JsxNode =
   | boolean
   | undefined
   | VNode
-  | JsxNode[];
+  | JSXNode[];
 
 export type EmptyObj = Record<string | number | symbol, never>;
 
@@ -91,7 +91,7 @@ export type FunctionComponent<P = EmptyObj> = (props: P) => VNode | null;
 
 export type ComponentType<P = EmptyObj> = Component<P>;
 
-export namespace JSX {
+export namespace JSXInternal {
   export type LibraryManagedAttributes<Component, Props> = Component extends {
     defaultProps: infer Defaults;
   } ? Defaultize<Props, Defaults>
