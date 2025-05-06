@@ -56,7 +56,6 @@ export class VNode<P = EmptyObj> implements IVNode<P> {
   ) {}
 
   [Symbol.toPrimitive](): string {
-    console.log("To string");
     return this.#renderToString();
   }
 
