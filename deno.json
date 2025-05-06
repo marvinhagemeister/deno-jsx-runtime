@@ -17,5 +17,13 @@
   "imports": {
     "@std/expect": "jsr:@std/expect@1",
     "@std/html": "jsr:@std/html@^1.0.3"
+  },
+  "publish": {
+    "include": [
+      "LICENSE",
+      "README.md",
+      "src/**/*.ts"
+    ],
+    "exclude": ["src/**/*.test.ts"]
   }
 }
