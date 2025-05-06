@@ -208,8 +208,9 @@ export function isValidElement(vnode: unknown): vnode is VNode {
 }
 
 export function Template(
-  props: { templates: TemplateStringsArray; exprs: JsxNode[] },
+  _props: { templates: TemplateStringsArray; exprs: JsxNode[] },
 ) {
+  // deno-lint-ignore no-explicit-any
   return null as any;
 }
 
@@ -218,7 +219,8 @@ export function jsxTemplate(
   ...exprs: JsxNode[]
 ): VNode<{ templates: string[]; exprs: JsxNode[] }> {
   return new VNode(
-    Template,
+    // deno-lint-ignore no-explicit-any
+    Template as any,
     // deno-lint-ignore no-explicit-any
     { templates: templates as any, exprs },
     undefined,
