@@ -657,232 +657,232 @@ export namespace JSXInternal {
   export interface DOMAttributes<Target extends EventTarget>
     extends CustomDOMAttributes {
     // Image Events
-    onLoad?: GenericEventHandler<Target> | undefined;
-    onLoadCapture?: GenericEventHandler<Target> | undefined;
-    onError?: GenericEventHandler<Target> | undefined;
-    onErrorCapture?: GenericEventHandler<Target> | undefined;
+    onload?: GenericEventHandler<Target> | undefined;
+    onloadcapture?: GenericEventHandler<Target> | undefined;
+    onerror?: GenericEventHandler<Target> | undefined;
+    onerrorcapture?: GenericEventHandler<Target> | undefined;
 
     // Clipboard Events
-    onCopy?: ClipboardEventHandler<Target> | undefined;
-    onCopyCapture?: ClipboardEventHandler<Target> | undefined;
-    onCut?: ClipboardEventHandler<Target> | undefined;
-    onCutCapture?: ClipboardEventHandler<Target> | undefined;
-    onPaste?: ClipboardEventHandler<Target> | undefined;
-    onPasteCapture?: ClipboardEventHandler<Target> | undefined;
+    oncopy?: ClipboardEventHandler<Target> | undefined;
+    oncopycapture?: ClipboardEventHandler<Target> | undefined;
+    oncut?: ClipboardEventHandler<Target> | undefined;
+    oncutcapture?: ClipboardEventHandler<Target> | undefined;
+    onpaste?: ClipboardEventHandler<Target> | undefined;
+    onpastecapture?: ClipboardEventHandler<Target> | undefined;
 
     // Composition Events
-    onCompositionEnd?: CompositionEventHandler<Target> | undefined;
-    onCompositionEndCapture?: CompositionEventHandler<Target> | undefined;
-    onCompositionStart?: CompositionEventHandler<Target> | undefined;
-    onCompositionStartCapture?: CompositionEventHandler<Target> | undefined;
-    onCompositionUpdate?: CompositionEventHandler<Target> | undefined;
-    onCompositionUpdateCapture?: CompositionEventHandler<Target> | undefined;
+    oncompositionend?: CompositionEventHandler<Target> | undefined;
+    oncompositionendcapture?: CompositionEventHandler<Target> | undefined;
+    oncompositionstart?: CompositionEventHandler<Target> | undefined;
+    oncompositionstartcapture?: CompositionEventHandler<Target> | undefined;
+    oncompositionupdate?: CompositionEventHandler<Target> | undefined;
+    oncompositionupdatecapture?: CompositionEventHandler<Target> | undefined;
 
     // Popover Events
-    onBeforeToggle?: ToggleEventHandler<Target> | undefined;
-    onToggle?: ToggleEventHandler<Target> | undefined;
+    onbeforetoggle?: ToggleEventHandler<Target> | undefined;
+    ontoggle?: ToggleEventHandler<Target> | undefined;
 
     // Dialog Events
-    onClose?: GenericEventHandler<Target> | undefined;
-    onCancel?: GenericEventHandler<Target> | undefined;
+    onclose?: GenericEventHandler<Target> | undefined;
+    oncancel?: GenericEventHandler<Target> | undefined;
 
     // Focus Events
-    onFocus?: FocusEventHandler<Target> | undefined;
-    onFocusCapture?: FocusEventHandler<Target> | undefined;
-    onFocusIn?: FocusEventHandler<Target> | undefined;
-    onFocusInCapture?: FocusEventHandler<Target> | undefined;
-    onFocusOut?: FocusEventHandler<Target> | undefined;
-    onFocusOutCapture?: FocusEventHandler<Target> | undefined;
-    onBlur?: FocusEventHandler<Target> | undefined;
-    onBlurCapture?: FocusEventHandler<Target> | undefined;
+    onfocus?: FocusEventHandler<Target> | undefined;
+    onfocuscapture?: FocusEventHandler<Target> | undefined;
+    onfocusin?: FocusEventHandler<Target> | undefined;
+    onfocusincapture?: FocusEventHandler<Target> | undefined;
+    onfocusout?: FocusEventHandler<Target> | undefined;
+    onfocusoutcapture?: FocusEventHandler<Target> | undefined;
+    onblur?: FocusEventHandler<Target> | undefined;
+    onblurcapture?: FocusEventHandler<Target> | undefined;
 
     // Form Events
-    onChange?: GenericEventHandler<Target> | undefined;
-    onChangeCapture?: GenericEventHandler<Target> | undefined;
-    onInput?: InputEventHandler<Target> | undefined;
-    onInputCapture?: InputEventHandler<Target> | undefined;
-    onBeforeInput?: InputEventHandler<Target> | undefined;
-    onBeforeInputCapture?: InputEventHandler<Target> | undefined;
-    onSearch?: GenericEventHandler<Target> | undefined;
-    onSearchCapture?: GenericEventHandler<Target> | undefined;
-    onSubmit?: SubmitEventHandler<Target> | undefined;
-    onSubmitCapture?: SubmitEventHandler<Target> | undefined;
-    onInvalid?: GenericEventHandler<Target> | undefined;
-    onInvalidCapture?: GenericEventHandler<Target> | undefined;
-    onReset?: GenericEventHandler<Target> | undefined;
-    onResetCapture?: GenericEventHandler<Target> | undefined;
-    onFormData?: GenericEventHandler<Target> | undefined;
-    onFormDataCapture?: GenericEventHandler<Target> | undefined;
+    onchange?: GenericEventHandler<Target> | undefined;
+    onchangecapture?: GenericEventHandler<Target> | undefined;
+    oninput?: InputEventHandler<Target> | undefined;
+    oninputcapture?: InputEventHandler<Target> | undefined;
+    onbeforeinput?: InputEventHandler<Target> | undefined;
+    onbeforeinputcapture?: InputEventHandler<Target> | undefined;
+    onsearch?: GenericEventHandler<Target> | undefined;
+    onsearchcapture?: GenericEventHandler<Target> | undefined;
+    onsubmit?: SubmitEventHandler<Target> | undefined;
+    onsubmitcapture?: SubmitEventHandler<Target> | undefined;
+    oninvalid?: GenericEventHandler<Target> | undefined;
+    oninvalidcapture?: GenericEventHandler<Target> | undefined;
+    onreset?: GenericEventHandler<Target> | undefined;
+    onresetcapture?: GenericEventHandler<Target> | undefined;
+    onformdata?: GenericEventHandler<Target> | undefined;
+    onformdatacapture?: GenericEventHandler<Target> | undefined;
 
     // Keyboard Events
-    onKeyDown?: KeyboardEventHandler<Target> | undefined;
-    onKeyDownCapture?: KeyboardEventHandler<Target> | undefined;
-    onKeyPress?: KeyboardEventHandler<Target> | undefined;
-    onKeyPressCapture?: KeyboardEventHandler<Target> | undefined;
-    onKeyUp?: KeyboardEventHandler<Target> | undefined;
-    onKeyUpCapture?: KeyboardEventHandler<Target> | undefined;
+    onkeydown?: KeyboardEventHandler<Target> | undefined;
+    onkeydowncapture?: KeyboardEventHandler<Target> | undefined;
+    onkeypress?: KeyboardEventHandler<Target> | undefined;
+    onkeypresscapture?: KeyboardEventHandler<Target> | undefined;
+    onkeyup?: KeyboardEventHandler<Target> | undefined;
+    onkeyupcapture?: KeyboardEventHandler<Target> | undefined;
 
     // Media Events
-    onAbort?: GenericEventHandler<Target> | undefined;
-    onAbortCapture?: GenericEventHandler<Target> | undefined;
-    onCanPlay?: GenericEventHandler<Target> | undefined;
-    onCanPlayCapture?: GenericEventHandler<Target> | undefined;
-    onCanPlayThrough?: GenericEventHandler<Target> | undefined;
-    onCanPlayThroughCapture?: GenericEventHandler<Target> | undefined;
-    onDurationChange?: GenericEventHandler<Target> | undefined;
-    onDurationChangeCapture?: GenericEventHandler<Target> | undefined;
-    onEmptied?: GenericEventHandler<Target> | undefined;
-    onEmptiedCapture?: GenericEventHandler<Target> | undefined;
-    onEncrypted?: GenericEventHandler<Target> | undefined;
-    onEncryptedCapture?: GenericEventHandler<Target> | undefined;
-    onEnded?: GenericEventHandler<Target> | undefined;
-    onEndedCapture?: GenericEventHandler<Target> | undefined;
-    onLoadedData?: GenericEventHandler<Target> | undefined;
-    onLoadedDataCapture?: GenericEventHandler<Target> | undefined;
-    onLoadedMetadata?: GenericEventHandler<Target> | undefined;
-    onLoadedMetadataCapture?: GenericEventHandler<Target> | undefined;
-    onLoadStart?: GenericEventHandler<Target> | undefined;
-    onLoadStartCapture?: GenericEventHandler<Target> | undefined;
-    onPause?: GenericEventHandler<Target> | undefined;
-    onPauseCapture?: GenericEventHandler<Target> | undefined;
-    onPlay?: GenericEventHandler<Target> | undefined;
-    onPlayCapture?: GenericEventHandler<Target> | undefined;
-    onPlaying?: GenericEventHandler<Target> | undefined;
-    onPlayingCapture?: GenericEventHandler<Target> | undefined;
-    onProgress?: GenericEventHandler<Target> | undefined;
-    onProgressCapture?: GenericEventHandler<Target> | undefined;
-    onRateChange?: GenericEventHandler<Target> | undefined;
-    onRateChangeCapture?: GenericEventHandler<Target> | undefined;
-    onSeeked?: GenericEventHandler<Target> | undefined;
-    onSeekedCapture?: GenericEventHandler<Target> | undefined;
-    onSeeking?: GenericEventHandler<Target> | undefined;
-    onSeekingCapture?: GenericEventHandler<Target> | undefined;
-    onStalled?: GenericEventHandler<Target> | undefined;
-    onStalledCapture?: GenericEventHandler<Target> | undefined;
-    onSuspend?: GenericEventHandler<Target> | undefined;
-    onSuspendCapture?: GenericEventHandler<Target> | undefined;
-    onTimeUpdate?: GenericEventHandler<Target> | undefined;
-    onTimeUpdateCapture?: GenericEventHandler<Target> | undefined;
-    onVolumeChange?: GenericEventHandler<Target> | undefined;
-    onVolumeChangeCapture?: GenericEventHandler<Target> | undefined;
-    onWaiting?: GenericEventHandler<Target> | undefined;
-    onWaitingCapture?: GenericEventHandler<Target> | undefined;
+    onabort?: GenericEventHandler<Target> | undefined;
+    onabortcapture?: GenericEventHandler<Target> | undefined;
+    oncanplay?: GenericEventHandler<Target> | undefined;
+    oncanplaycapture?: GenericEventHandler<Target> | undefined;
+    oncanplaythrough?: GenericEventHandler<Target> | undefined;
+    oncanplaythroughcapture?: GenericEventHandler<Target> | undefined;
+    ondurationchange?: GenericEventHandler<Target> | undefined;
+    ondurationchangecapture?: GenericEventHandler<Target> | undefined;
+    onemptied?: GenericEventHandler<Target> | undefined;
+    onemptiedcapture?: GenericEventHandler<Target> | undefined;
+    onencrypted?: GenericEventHandler<Target> | undefined;
+    onencryptedcapture?: GenericEventHandler<Target> | undefined;
+    onended?: GenericEventHandler<Target> | undefined;
+    onendedcapture?: GenericEventHandler<Target> | undefined;
+    onloadeddata?: GenericEventHandler<Target> | undefined;
+    onloadeddatacapture?: GenericEventHandler<Target> | undefined;
+    onloadedmetadata?: GenericEventHandler<Target> | undefined;
+    onloadedmetadatacapture?: GenericEventHandler<Target> | undefined;
+    onloadstart?: GenericEventHandler<Target> | undefined;
+    onloadstartcapture?: GenericEventHandler<Target> | undefined;
+    onpause?: GenericEventHandler<Target> | undefined;
+    onpausecapture?: GenericEventHandler<Target> | undefined;
+    onplay?: GenericEventHandler<Target> | undefined;
+    onplaycapture?: GenericEventHandler<Target> | undefined;
+    onplaying?: GenericEventHandler<Target> | undefined;
+    onplayingcapture?: GenericEventHandler<Target> | undefined;
+    onprogress?: GenericEventHandler<Target> | undefined;
+    onprogresscapture?: GenericEventHandler<Target> | undefined;
+    onratechange?: GenericEventHandler<Target> | undefined;
+    onratechangecapture?: GenericEventHandler<Target> | undefined;
+    onseeked?: GenericEventHandler<Target> | undefined;
+    onseekedcapture?: GenericEventHandler<Target> | undefined;
+    onseeking?: GenericEventHandler<Target> | undefined;
+    onseekingcapture?: GenericEventHandler<Target> | undefined;
+    onstalled?: GenericEventHandler<Target> | undefined;
+    onstalledcapture?: GenericEventHandler<Target> | undefined;
+    onsuspend?: GenericEventHandler<Target> | undefined;
+    onsuspendcapture?: GenericEventHandler<Target> | undefined;
+    ontimeupdate?: GenericEventHandler<Target> | undefined;
+    ontimeupdatecapture?: GenericEventHandler<Target> | undefined;
+    onvolumechange?: GenericEventHandler<Target> | undefined;
+    onvolumechangecapture?: GenericEventHandler<Target> | undefined;
+    onwaiting?: GenericEventHandler<Target> | undefined;
+    onwaitingcapture?: GenericEventHandler<Target> | undefined;
 
     // MouseEvents
-    onClick?: MouseEventHandler<Target> | undefined;
-    onClickCapture?: MouseEventHandler<Target> | undefined;
-    onContextMenu?: MouseEventHandler<Target> | undefined;
-    onContextMenuCapture?: MouseEventHandler<Target> | undefined;
-    onDblClick?: MouseEventHandler<Target> | undefined;
-    onDblClickCapture?: MouseEventHandler<Target> | undefined;
-    onDrag?: DragEventHandler<Target> | undefined;
-    onDragCapture?: DragEventHandler<Target> | undefined;
-    onDragEnd?: DragEventHandler<Target> | undefined;
-    onDragEndCapture?: DragEventHandler<Target> | undefined;
-    onDragEnter?: DragEventHandler<Target> | undefined;
-    onDragEnterCapture?: DragEventHandler<Target> | undefined;
-    onDragExit?: DragEventHandler<Target> | undefined;
-    onDragExitCapture?: DragEventHandler<Target> | undefined;
-    onDragLeave?: DragEventHandler<Target> | undefined;
-    onDragLeaveCapture?: DragEventHandler<Target> | undefined;
-    onDragOver?: DragEventHandler<Target> | undefined;
-    onDragOverCapture?: DragEventHandler<Target> | undefined;
-    onDragStart?: DragEventHandler<Target> | undefined;
-    onDragStartCapture?: DragEventHandler<Target> | undefined;
-    onDrop?: DragEventHandler<Target> | undefined;
-    onDropCapture?: DragEventHandler<Target> | undefined;
-    onMouseDown?: MouseEventHandler<Target> | undefined;
-    onMouseDownCapture?: MouseEventHandler<Target> | undefined;
-    onMouseEnter?: MouseEventHandler<Target> | undefined;
-    onMouseEnterCapture?: MouseEventHandler<Target> | undefined;
-    onMouseLeave?: MouseEventHandler<Target> | undefined;
-    onMouseLeaveCapture?: MouseEventHandler<Target> | undefined;
-    onMouseMove?: MouseEventHandler<Target> | undefined;
-    onMouseMoveCapture?: MouseEventHandler<Target> | undefined;
-    onMouseOut?: MouseEventHandler<Target> | undefined;
-    onMouseOutCapture?: MouseEventHandler<Target> | undefined;
-    onMouseOver?: MouseEventHandler<Target> | undefined;
-    onMouseOverCapture?: MouseEventHandler<Target> | undefined;
-    onMouseUp?: MouseEventHandler<Target> | undefined;
-    onMouseUpCapture?: MouseEventHandler<Target> | undefined;
+    onclick?: MouseEventHandler<Target> | undefined;
+    onclickcapture?: MouseEventHandler<Target> | undefined;
+    oncontextmenu?: MouseEventHandler<Target> | undefined;
+    oncontextmenucapture?: MouseEventHandler<Target> | undefined;
+    ondblclick?: MouseEventHandler<Target> | undefined;
+    ondblclickcapture?: MouseEventHandler<Target> | undefined;
+    ondrag?: DragEventHandler<Target> | undefined;
+    ondragcapture?: DragEventHandler<Target> | undefined;
+    ondragend?: DragEventHandler<Target> | undefined;
+    ondragendcapture?: DragEventHandler<Target> | undefined;
+    ondragenter?: DragEventHandler<Target> | undefined;
+    ondragentercapture?: DragEventHandler<Target> | undefined;
+    ondragexit?: DragEventHandler<Target> | undefined;
+    ondragexitcapture?: DragEventHandler<Target> | undefined;
+    ondragleave?: DragEventHandler<Target> | undefined;
+    ondragleavecapture?: DragEventHandler<Target> | undefined;
+    ondragover?: DragEventHandler<Target> | undefined;
+    ondragovercapture?: DragEventHandler<Target> | undefined;
+    ondragstart?: DragEventHandler<Target> | undefined;
+    ondragstartcapture?: DragEventHandler<Target> | undefined;
+    ondrop?: DragEventHandler<Target> | undefined;
+    ondropcapture?: DragEventHandler<Target> | undefined;
+    onmousedown?: MouseEventHandler<Target> | undefined;
+    onmousedowncapture?: MouseEventHandler<Target> | undefined;
+    onmouseenter?: MouseEventHandler<Target> | undefined;
+    onmouseentercapture?: MouseEventHandler<Target> | undefined;
+    onmouseleave?: MouseEventHandler<Target> | undefined;
+    onmouseleavecapture?: MouseEventHandler<Target> | undefined;
+    onmousemove?: MouseEventHandler<Target> | undefined;
+    onmousemovecapture?: MouseEventHandler<Target> | undefined;
+    onmouseout?: MouseEventHandler<Target> | undefined;
+    onmouseoutcapture?: MouseEventHandler<Target> | undefined;
+    onmouseover?: MouseEventHandler<Target> | undefined;
+    onmouseovercapture?: MouseEventHandler<Target> | undefined;
+    onmouseup?: MouseEventHandler<Target> | undefined;
+    onmouseupcapture?: MouseEventHandler<Target> | undefined;
     // TODO: Spec for `auxclick` events was changed to make it a PointerEvent but only
     // Chrome has support for it yet. When more browsers align we should change this.
     // https://developer.mozilla.org/en-US/docs/Web/API/Element/auxclick_event#browser_compatibility
-    onAuxClick?: MouseEventHandler<Target> | undefined;
-    onAuxClickCapture?: MouseEventHandler<Target> | undefined;
+    onauxclick?: MouseEventHandler<Target> | undefined;
+    onauxclickcapture?: MouseEventHandler<Target> | undefined;
 
     // Selection Events
-    onSelect?: GenericEventHandler<Target> | undefined;
-    onSelectCapture?: GenericEventHandler<Target> | undefined;
+    onselect?: GenericEventHandler<Target> | undefined;
+    onselectcapture?: GenericEventHandler<Target> | undefined;
 
     // Touch Events
-    onTouchCancel?: TouchEventHandler<Target> | undefined;
-    onTouchCancelCapture?: TouchEventHandler<Target> | undefined;
-    onTouchEnd?: TouchEventHandler<Target> | undefined;
-    onTouchEndCapture?: TouchEventHandler<Target> | undefined;
-    onTouchMove?: TouchEventHandler<Target> | undefined;
-    onTouchMoveCapture?: TouchEventHandler<Target> | undefined;
-    onTouchStart?: TouchEventHandler<Target> | undefined;
-    onTouchStartCapture?: TouchEventHandler<Target> | undefined;
+    ontouchcancel?: TouchEventHandler<Target> | undefined;
+    ontouchcancelcapture?: TouchEventHandler<Target> | undefined;
+    ontouchend?: TouchEventHandler<Target> | undefined;
+    ontouchendcapture?: TouchEventHandler<Target> | undefined;
+    ontouchmove?: TouchEventHandler<Target> | undefined;
+    ontouchmovecapture?: TouchEventHandler<Target> | undefined;
+    ontouchstart?: TouchEventHandler<Target> | undefined;
+    ontouchstartcapture?: TouchEventHandler<Target> | undefined;
 
     // Pointer Events
-    onPointerOver?: PointerEventHandler<Target> | undefined;
-    onPointerOverCapture?: PointerEventHandler<Target> | undefined;
-    onPointerEnter?: PointerEventHandler<Target> | undefined;
-    onPointerEnterCapture?: PointerEventHandler<Target> | undefined;
-    onPointerDown?: PointerEventHandler<Target> | undefined;
-    onPointerDownCapture?: PointerEventHandler<Target> | undefined;
-    onPointerMove?: PointerEventHandler<Target> | undefined;
-    onPointerMoveCapture?: PointerEventHandler<Target> | undefined;
-    onPointerUp?: PointerEventHandler<Target> | undefined;
-    onPointerUpCapture?: PointerEventHandler<Target> | undefined;
-    onPointerCancel?: PointerEventHandler<Target> | undefined;
-    onPointerCancelCapture?: PointerEventHandler<Target> | undefined;
-    onPointerOut?: PointerEventHandler<Target> | undefined;
-    onPointerOutCapture?: PointerEventHandler<Target> | undefined;
-    onPointerLeave?: PointerEventHandler<Target> | undefined;
-    onPointerLeaveCapture?: PointerEventHandler<Target> | undefined;
-    onGotPointerCapture?: PointerEventHandler<Target> | undefined;
-    onGotPointerCaptureCapture?: PointerEventHandler<Target> | undefined;
-    onLostPointerCapture?: PointerEventHandler<Target> | undefined;
-    onLostPointerCaptureCapture?: PointerEventHandler<Target> | undefined;
+    onpointerover?: PointerEventHandler<Target> | undefined;
+    onpointerovercapture?: PointerEventHandler<Target> | undefined;
+    onpointerenter?: PointerEventHandler<Target> | undefined;
+    onpointerentercapture?: PointerEventHandler<Target> | undefined;
+    onpointerdown?: PointerEventHandler<Target> | undefined;
+    onpointerdowncapture?: PointerEventHandler<Target> | undefined;
+    onpointermove?: PointerEventHandler<Target> | undefined;
+    onpointermovecapture?: PointerEventHandler<Target> | undefined;
+    onpointerup?: PointerEventHandler<Target> | undefined;
+    onpointerupcapture?: PointerEventHandler<Target> | undefined;
+    onpointercancel?: PointerEventHandler<Target> | undefined;
+    onpointercancelcapture?: PointerEventHandler<Target> | undefined;
+    onpointerout?: PointerEventHandler<Target> | undefined;
+    onpointeroutcapture?: PointerEventHandler<Target> | undefined;
+    onpointerleave?: PointerEventHandler<Target> | undefined;
+    onpointerleavecapture?: PointerEventHandler<Target> | undefined;
+    ongotpointercapture?: PointerEventHandler<Target> | undefined;
+    ongotpointercapturecapture?: PointerEventHandler<Target> | undefined;
+    onlostpointercapture?: PointerEventHandler<Target> | undefined;
+    onlostpointercapturecapture?: PointerEventHandler<Target> | undefined;
 
     // UI Events
-    onScroll?: UIEventHandler<Target> | undefined;
-    onScrollEnd?: UIEventHandler<Target> | undefined;
-    onScrollCapture?: UIEventHandler<Target> | undefined;
+    onscroll?: UIEventHandler<Target> | undefined;
+    onscrollend?: UIEventHandler<Target> | undefined;
+    onscrollcapture?: UIEventHandler<Target> | undefined;
 
     // Wheel Events
-    onWheel?: WheelEventHandler<Target> | undefined;
-    onWheelCapture?: WheelEventHandler<Target> | undefined;
+    onwheel?: WheelEventHandler<Target> | undefined;
+    onwheelcapture?: WheelEventHandler<Target> | undefined;
 
     // Animation Events
-    onAnimationStart?: AnimationEventHandler<Target> | undefined;
-    onAnimationStartCapture?: AnimationEventHandler<Target> | undefined;
-    onAnimationEnd?: AnimationEventHandler<Target> | undefined;
-    onAnimationEndCapture?: AnimationEventHandler<Target> | undefined;
-    onAnimationIteration?: AnimationEventHandler<Target> | undefined;
-    onAnimationIterationCapture?: AnimationEventHandler<Target> | undefined;
+    onanimationstart?: AnimationEventHandler<Target> | undefined;
+    onanimationstartcapture?: AnimationEventHandler<Target> | undefined;
+    onanimationend?: AnimationEventHandler<Target> | undefined;
+    onanimationendcapture?: AnimationEventHandler<Target> | undefined;
+    onanimationiteration?: AnimationEventHandler<Target> | undefined;
+    onanimationiterationcapture?: AnimationEventHandler<Target> | undefined;
 
     // Transition Events
-    onTransitionCancel?: TransitionEventHandler<Target>;
-    onTransitionCancelCapture?: TransitionEventHandler<Target>;
-    onTransitionEnd?: TransitionEventHandler<Target>;
-    onTransitionEndCapture?: TransitionEventHandler<Target>;
-    onTransitionRun?: TransitionEventHandler<Target>;
-    onTransitionRunCapture?: TransitionEventHandler<Target>;
-    onTransitionStart?: TransitionEventHandler<Target>;
-    onTransitionStartCapture?: TransitionEventHandler<Target>;
+    ontransitioncancel?: TransitionEventHandler<Target>;
+    ontransitioncancelcapture?: TransitionEventHandler<Target>;
+    ontransitionend?: TransitionEventHandler<Target>;
+    ontransitionendcapture?: TransitionEventHandler<Target>;
+    ontransitionrun?: TransitionEventHandler<Target>;
+    ontransitionruncapture?: TransitionEventHandler<Target>;
+    ontransitionstart?: TransitionEventHandler<Target>;
+    ontransitionstartcapture?: TransitionEventHandler<Target>;
 
     // PictureInPicture Events
-    onEnterPictureInPicture?: PictureInPictureEventHandler<Target>;
-    onEnterPictureInPictureCapture?: PictureInPictureEventHandler<Target>;
-    onLeavePictureInPicture?: PictureInPictureEventHandler<Target>;
-    onLeavePictureInPictureCapture?: PictureInPictureEventHandler<Target>;
-    onResize?: PictureInPictureEventHandler<Target>;
-    onResizeCapture?: PictureInPictureEventHandler<Target>;
+    onenterpictureinpicture?: PictureInPictureEventHandler<Target>;
+    onenterpictureinpicturecapture?: PictureInPictureEventHandler<Target>;
+    onleavepictureinpicture?: PictureInPictureEventHandler<Target>;
+    onleavepictureinpicturecapture?: PictureInPictureEventHandler<Target>;
+    onresize?: PictureInPictureEventHandler<Target>;
+    onresizecapture?: PictureInPictureEventHandler<Target>;
 
-    onCommand?: CommandEventHandler<Target>;
+    oncommand?: CommandEventHandler<Target>;
   }
 
   // All the WAI-ARIA 1.1 attributes from https://www.w3.org/TR/wai-aria-1.1/
