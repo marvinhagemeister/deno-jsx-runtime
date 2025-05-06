@@ -85,6 +85,18 @@ function renderToString<P>(vnode: VNode<P>) {
       }
 
       return s;
+    } else if (type === ErrorBoundary) {
+      try {
+        return renderChild(props.children);
+      } catch (err: unknown) {
+        if (!isFallbackProps(props)) {
+          throw new Error(
+            `Missing or invalid "fallback" prop passed to ErrorBoundary`,
+          );
+        }
+        const fallback = props.fallback(err);
+        return renderChild(fallback);
+      }
     } else if (type === Fragment && isDangerousProps(props)) {
       const raw = props.dangerouslySetInnerHTML?.__html ?? "";
       return raw;
@@ -242,6 +254,21 @@ export const Fragment: FunctionComponent<
 > = (props) => {
   return props.children;
 };
+
+export const ErrorBoundary: FunctionComponent<
+  // deno-lint-ignore no-explicit-any
+  { children?: any; fallback: (error: unknown) => JSXNode }
+> = (_props) => {
+  return null;
+};
+
+interface FallbackProps {
+  fallback: (error: unknown) => JSXNode;
+}
+function isFallbackProps(props: unknown): props is FallbackProps {
+  return props !== null && typeof props === "object" &&
+    "fallback" in props && typeof props.fallback === "function";
+}
 
 export function isValidElement(vnode: unknown): vnode is VNode {
   return vnode instanceof VNode && vnode.$$typeof === $$_TYPEOF;

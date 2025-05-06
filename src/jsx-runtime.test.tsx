@@ -1,6 +1,8 @@
 import {
   createElement,
+  ErrorBoundary,
   Fragment,
+  type JSX,
   jsx,
   jsxAttr,
   jsxEscape,
@@ -182,4 +184,26 @@ Deno.test("render - ignore function children", () => {
 
   vnode = jsxTemplate`<div>${jsxEscape(() => {})}</div>`;
   expect(String(vnode)).toEqual("<div></div>");
+});
+
+Deno.test("render - ErrorBoundary", () => {
+  function Thrower(): JSX.Element {
+    throw new Error("fail");
+  }
+  let vnode = (
+    <ErrorBoundary fallback={(err) => <p>{String(err)}</p>}>
+      <Thrower />
+    </ErrorBoundary>
+  );
+  expect(String(vnode)).toEqual("<p>Error: fail</p>");
+
+  function Thrower2(): JSX.Element {
+    throw "foo";
+  }
+  vnode = (
+    <ErrorBoundary fallback={(err) => <p>{String(err)}</p>}>
+      <Thrower2 />
+    </ErrorBoundary>
+  );
+  expect(String(vnode)).toEqual("<p>foo</p>");
 });
