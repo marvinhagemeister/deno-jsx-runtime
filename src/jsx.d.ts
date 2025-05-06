@@ -1,6 +1,3 @@
-// Users who only use Preact for SSR might not specify "dom" in their lib in tsconfig.json
-/// <reference lib="dom" />
-
 type Defaultize<Props, Defaults> =
   // Distribute over unions
   Props extends any // Make any properties included in Default optional
@@ -94,7 +91,7 @@ export type FunctionComponent<P = EmptyObj> = (props: P) => VNode | null;
 
 export type ComponentType<P = EmptyObj> = Component<P>;
 
-declare namespace JSX {
+export namespace JSX {
   export type LibraryManagedAttributes<Component, Props> = Component extends {
     defaultProps: infer Defaults;
   } ? Defaultize<Props, Defaults>

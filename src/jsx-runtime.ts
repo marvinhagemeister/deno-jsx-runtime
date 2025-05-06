@@ -203,7 +203,7 @@ export function jsx<P extends Attributes = any>(
 
 export const jsxs = jsx;
 
-export function Fragment(props: Attributes) {
+export function Fragment(props: Attributes): JsxNode {
   return props.children;
 }
 
@@ -213,9 +213,8 @@ export function isValidElement(vnode: unknown): vnode is VNode {
 
 export function Template(
   _props: { templates: TemplateStringsArray; exprs: JsxNode[] },
-) {
-  // deno-lint-ignore no-explicit-any
-  return null as any;
+): JsxNode {
+  return null;
 }
 
 export function jsxTemplate(
