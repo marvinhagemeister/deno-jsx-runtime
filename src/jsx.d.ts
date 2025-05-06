@@ -1275,74 +1275,58 @@ declare namespace JSX {
     extends Attributes, DOMAttributes<RefType>, AriaAttributes {
     // Standard HTML Attributes
     accept?: string | undefined;
-    acceptCharset?: string | undefined;
-    "accept-charset"?: AllHTMLAttributes["acceptCharset"];
-    accessKey?: string | undefined;
-    accesskey?: AllHTMLAttributes["accessKey"];
+    "accept-charset"?: string | undefined;
+    accesskey?: string | undefined;
     action?: string | undefined;
     allow?: string | undefined;
-    allowFullScreen?: boolean | undefined;
-    allowTransparency?: boolean | undefined;
+    allowfullscreen?: boolean | undefined;
+    allowtransparency?: boolean | undefined;
     alt?: string | undefined;
     as?: string | undefined;
     async?: boolean | undefined;
     autocomplete?: string | undefined;
-    autoComplete?: string | undefined;
     autocorrect?: string | undefined;
-    autoCorrect?: string | undefined;
     autofocus?: boolean | undefined;
-    autoFocus?: boolean | undefined;
-    autoPlay?: boolean | undefined;
     autoplay?: boolean | undefined;
     capture?: boolean | string | undefined;
-    cellPadding?: number | string | undefined;
-    cellSpacing?: number | string | undefined;
-    charSet?: string | undefined;
+    cellpadding?: number | string | undefined;
+    cellspacing?: number | string | undefined;
     charset?: string | undefined;
     challenge?: string | undefined;
     checked?: boolean | undefined;
     cite?: string | undefined;
     class?: string | undefined;
-    className?: string | undefined;
     cols?: number | undefined;
-    colSpan?: number | undefined;
     colspan?: number | undefined;
     content?: string | undefined;
-    contentEditable?:
+    contenteditable?:
       | Booleanish
       | ""
       | "plaintext-only"
       | "inherit"
       | undefined;
-    contenteditable?: AllHTMLAttributes["contentEditable"];
-    /** @deprecated See https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contextmenu */
-    contextMenu?: string | undefined;
     /** @deprecated See https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contextmenu */
     contextmenu?: string | undefined;
     controls?: boolean | undefined;
     controlslist?: string | undefined;
-    controlsList?: string | undefined;
     coords?: string | undefined;
-    crossOrigin?: string | undefined;
     crossorigin?: string | undefined;
-    currentTime?: number | undefined;
+    currenttime?: number | undefined;
     data?: string | undefined;
-    dateTime?: string | undefined;
     datetime?: string | undefined;
     default?: boolean | undefined;
-    defaultChecked?: boolean | undefined;
-    defaultMuted?: boolean | undefined;
-    defaultPlaybackRate?: number | undefined;
-    defaultValue?: string | undefined;
+    defaultchecked?: boolean | undefined;
+    defaultmuted?: boolean | undefined;
+    defaultplaybackrate?: number | undefined;
+    defaultvalue?: string | undefined;
     defer?: boolean | undefined;
     dir?: "auto" | "rtl" | "ltr" | undefined;
     disabled?: boolean | undefined;
     disableremoteplayback?: boolean | undefined;
-    disableRemotePlayback?: boolean | undefined;
+    // deno-lint-ignore no-explicit-any
     download?: any | undefined;
     decoding?: "sync" | "async" | "auto" | undefined;
     draggable?: boolean | undefined;
-    encType?: string | undefined;
     enctype?: string | undefined;
     enterkeyhint?:
       | "enter"
@@ -1353,43 +1337,32 @@ declare namespace JSX {
       | "search"
       | "send"
       | undefined;
-    elementTiming?: string | undefined;
-    elementtiming?: AllHTMLAttributes["elementTiming"];
+    elementtiming?: string | undefined;
     exportparts?: string | undefined;
     for?: string | undefined;
     form?: string | undefined;
-    formAction?: string | undefined;
     formaction?: string | undefined;
-    formEncType?: string | undefined;
     formenctype?: string | undefined;
-    formMethod?: string | undefined;
     formmethod?: string | undefined;
-    formNoValidate?: boolean | undefined;
     formnovalidate?: boolean | undefined;
-    formTarget?: string | undefined;
     formtarget?: string | undefined;
-    frameBorder?: number | string | undefined;
     frameborder?: number | string | undefined;
     headers?: string | undefined;
     height?: number | string | undefined;
     hidden?: boolean | "hidden" | "until-found" | undefined;
     high?: number | undefined;
     href?: string | undefined;
-    hrefLang?: string | undefined;
     hreflang?: string | undefined;
-    htmlFor?: string | undefined;
-    httpEquiv?: string | undefined;
     "http-equiv"?: string | undefined;
     icon?: string | undefined;
     id?: string | undefined;
     indeterminate?: boolean | undefined;
     inert?: boolean | undefined;
-    inputMode?: string | undefined;
     inputmode?: string | undefined;
     integrity?: string | undefined;
     is?: string | undefined;
-    keyParams?: string | undefined;
-    keyType?: string | undefined;
+    keyoarams?: string | undefined;
+    keytype?: string | undefined;
     kind?: string | undefined;
     label?: string | undefined;
     lang?: string | undefined;
@@ -1398,23 +1371,20 @@ declare namespace JSX {
     loop?: boolean | undefined;
     low?: number | undefined;
     manifest?: string | undefined;
-    marginHeight?: number | undefined;
-    marginWidth?: number | undefined;
+    marginheight?: number | undefined;
+    marginwidth?: number | undefined;
     max?: number | string | undefined;
-    maxLength?: number | undefined;
     maxlength?: number | undefined;
     media?: string | undefined;
-    mediaGroup?: string | undefined;
+    mediagroup?: string | undefined;
     method?: string | undefined;
     min?: number | string | undefined;
-    minLength?: number | undefined;
     minlength?: number | undefined;
     multiple?: boolean | undefined;
     muted?: boolean | undefined;
     name?: string | undefined;
     nomodule?: boolean | undefined;
     nonce?: string | undefined;
-    noValidate?: boolean | undefined;
     novalidate?: boolean | undefined;
     open?: boolean | undefined;
     optimum?: number | undefined;
@@ -1422,20 +1392,16 @@ declare namespace JSX {
     pattern?: string | undefined;
     ping?: string | undefined;
     placeholder?: string | undefined;
-    playsInline?: boolean | undefined;
     playsinline?: boolean | undefined;
-    playbackRate?: number | undefined;
+    playbackrate?: number | undefined;
     popover?: "auto" | "hint" | "manual" | boolean | undefined;
     popovertarget?: string | undefined;
-    popoverTarget?: string | undefined;
     popovertargetaction?: "hide" | "show" | "toggle" | undefined;
-    popoverTargetAction?: "hide" | "show" | "toggle" | undefined;
     poster?: string | undefined;
     preload?: "auto" | "metadata" | "none" | undefined;
-    preservesPitch?: boolean | undefined;
-    radioGroup?: string | undefined;
+    preservesoitch?: boolean | undefined;
+    radiogroup?: string | undefined;
     readonly?: boolean | undefined;
-    readOnly?: boolean | undefined;
     referrerpolicy?:
       | "no-referrer"
       | "no-referrer-when-downgrade"
@@ -1451,7 +1417,6 @@ declare namespace JSX {
     reversed?: boolean | undefined;
     role?: AriaRole | undefined;
     rows?: number | undefined;
-    rowSpan?: number | undefined;
     rowspan?: number | undefined;
     sandbox?: string | undefined;
     scope?: string | undefined;
@@ -1466,23 +1431,18 @@ declare namespace JSX {
     span?: number | undefined;
     spellcheck?: boolean | undefined;
     src?: string | undefined;
-    srcDoc?: string | undefined;
     srcdoc?: string | undefined;
-    srcLang?: string | undefined;
     srclang?: string | undefined;
-    srcSet?: string | undefined;
     srcset?: string | undefined;
-    srcObject?: MediaStream | MediaSource | Blob | File | null;
+    srcobject?: MediaStream | MediaSource | Blob | File | null;
     start?: number | undefined;
     step?: number | string | undefined;
     style?: string | CSSProperties | undefined;
     summary?: string | undefined;
-    tabIndex?: number | undefined;
     tabindex?: number | undefined;
     target?: string | undefined;
     title?: string | undefined;
     type?: string | undefined;
-    useMap?: string | undefined;
     usemap?: string | undefined;
     value?: string | string[] | number | undefined;
     volume?: string | number | undefined;
@@ -1499,21 +1459,14 @@ declare namespace JSX {
       | "words"
       | "characters"
       | undefined;
-    autoCapitalize?:
-      | "off"
-      | "none"
-      | "on"
-      | "sentences"
-      | "words"
-      | "characters"
-      | undefined;
-    disablePictureInPicture?: boolean | undefined;
+    disablepictureinpicture?: boolean | undefined;
     results?: number | undefined;
     translate?: boolean | undefined;
 
     // RDFa Attributes
     about?: string | undefined;
     datatype?: string | undefined;
+    // deno-lint-ignore no-explicit-any
     inlist?: any;
     prefix?: string | undefined;
     property?: string | undefined;
@@ -1522,15 +1475,10 @@ declare namespace JSX {
     vocab?: string | undefined;
 
     // Microdata Attributes
-    itemProp?: string | undefined;
     itemprop?: string | undefined;
-    itemScope?: boolean | undefined;
     itemscope?: boolean | undefined;
-    itemType?: string | undefined;
     itemtype?: string | undefined;
-    itemID?: string | undefined;
     itemid?: string | undefined;
-    itemRef?: string | undefined;
     itemref?: string | undefined;
   }
 
@@ -1538,7 +1486,6 @@ declare namespace JSX {
     extends Attributes, DOMAttributes<RefType>, AriaAttributes {
     // Standard HTML Attributes
     accesskey?: string | undefined;
-    accessKey?: string | undefined;
     autocapitalize?:
       | "off"
       | "none"
@@ -1547,27 +1494,10 @@ declare namespace JSX {
       | "words"
       | "characters"
       | undefined;
-    autoCapitalize?:
-      | "off"
-      | "none"
-      | "on"
-      | "sentences"
-      | "words"
-      | "characters"
-      | undefined;
     autocorrect?: string | undefined;
-    autoCorrect?: string | undefined;
     autofocus?: boolean | undefined;
-    autoFocus?: boolean | undefined;
     class?: string | undefined;
-    className?: string | undefined;
     contenteditable?:
-      | Booleanish
-      | ""
-      | "plaintext-only"
-      | "inherit"
-      | undefined;
-    contentEditable?:
       | Booleanish
       | ""
       | "plaintext-only"
@@ -1589,7 +1519,6 @@ declare namespace JSX {
     id?: string | undefined;
     inert?: boolean | undefined;
     inputmode?: string | undefined;
-    inputMode?: string | undefined;
     is?: string | undefined;
     lang?: string | undefined;
     nonce?: string | undefined;
@@ -1599,7 +1528,6 @@ declare namespace JSX {
     spellcheck?: boolean | undefined;
     style?: string | CSSProperties | undefined;
     tabindex?: number | undefined;
-    tabIndex?: number | undefined;
     title?: string | undefined;
     translate?: boolean | undefined;
 
@@ -1607,14 +1535,14 @@ declare namespace JSX {
     role?: AriaRole | undefined;
 
     // Non-standard Attributes
-    disablePictureInPicture?: boolean | undefined;
+    disablepictureinpicture?: boolean | undefined;
     elementtiming?: string | undefined;
-    elementTiming?: string | undefined;
     results?: number | undefined;
 
     // RDFa Attributes
     about?: string | undefined;
     datatype?: string | undefined;
+    // deno-lint-ignore no-explicit-any
     inlist?: any;
     prefix?: string | undefined;
     property?: string | undefined;
@@ -1624,15 +1552,10 @@ declare namespace JSX {
 
     // Microdata Attributes
     itemid?: string | undefined;
-    itemID?: string | undefined;
     itemprop?: string | undefined;
-    itemProp?: string | undefined;
     itemref?: string | undefined;
-    itemRef?: string | undefined;
     itemscope?: boolean | undefined;
-    itemScope?: boolean | undefined;
     itemtype?: string | undefined;
-    itemType?: string | undefined;
   }
 
   type HTMLAttributeReferrerPolicy =
@@ -1655,30 +1578,28 @@ declare namespace JSX {
 
   interface AnchorHTMLAttributes<T extends EventTarget = HTMLAnchorElement>
     extends HTMLAttributes<T> {
+    // deno-lint-ignore no-explicit-any
     download?: any;
     href?: string | undefined;
     hreflang?: string | undefined;
-    hrefLang?: string | undefined;
     media?: string | undefined;
     ping?: string | undefined;
     rel?: string | undefined;
     target?: HTMLAttributeAnchorTarget | undefined;
     type?: string | undefined;
     referrerpolicy?: HTMLAttributeReferrerPolicy | undefined;
-    referrerPolicy?: HTMLAttributeReferrerPolicy | undefined;
   }
 
   interface AreaHTMLAttributes<T extends EventTarget = HTMLAreaElement>
     extends HTMLAttributes<T> {
     alt?: string | undefined;
     coords?: string | undefined;
+    // deno-lint-ignore no-explicit-any
     download?: any;
     href?: string | undefined;
     hreflang?: string | undefined;
-    hrefLang?: string | undefined;
     media?: string | undefined;
     referrerpolicy?: HTMLAttributeReferrerPolicy | undefined;
-    referrerPolicy?: HTMLAttributeReferrerPolicy | undefined;
     rel?: string | undefined;
     shape?: string | undefined;
     target?: HTMLAttributeAnchorTarget | undefined;
@@ -1702,24 +1623,16 @@ declare namespace JSX {
     extends HTMLAttributes<T> {
     command?: string | undefined;
     commandfor?: string | undefined;
-    commandFor?: string | undefined;
     disabled?: boolean | undefined;
     form?: string | undefined;
     formaction?: string | undefined;
-    formAction?: string | undefined;
     formenctype?: string | undefined;
-    formEncType?: string | undefined;
     formmethod?: string | undefined;
-    formMethod?: string | undefined;
     formnovalidate?: boolean | undefined;
-    formNoValidate?: boolean | undefined;
     formtarget?: string | undefined;
-    formTarget?: string | undefined;
     name?: string | undefined;
     popovertarget?: string | undefined;
-    popoverTarget?: string | undefined;
     popovertargetaction?: "hide" | "show" | "toggle" | undefined;
-    popoverTargetAction?: "hide" | "show" | "toggle" | undefined;
     type?: "submit" | "reset" | "button" | undefined;
     value?: string | number | undefined;
   }
@@ -1750,7 +1663,6 @@ declare namespace JSX {
     extends HTMLAttributes<T> {
     cite?: string | undefined;
     datetime?: string | undefined;
-    dateTime?: string | undefined;
   }
 
   interface DetailsHTMLAttributes<T extends EventTarget = HTMLDetailsElement>
@@ -1764,7 +1676,6 @@ declare namespace JSX {
     onClose?: GenericEventHandler<T> | undefined;
     open?: boolean | undefined;
     closedby?: "none" | "closerequest" | "any" | undefined;
-    closedBy?: "none" | "closerequest" | "any" | undefined;
   }
 
   interface EmbedHTMLAttributes<T extends EventTarget = HTMLEmbedElement>
@@ -1785,16 +1696,12 @@ declare namespace JSX {
   interface FormHTMLAttributes<T extends EventTarget = HTMLFormElement>
     extends HTMLAttributes<T> {
     "accept-charset"?: string | undefined;
-    acceptCharset?: string | undefined;
     action?: string | undefined;
     autocomplete?: string | undefined;
-    autoComplete?: string | undefined;
     enctype?: string | undefined;
-    encType?: string | undefined;
     method?: string | undefined;
     name?: string | undefined;
     novalidate?: boolean | undefined;
-    noValidate?: boolean | undefined;
     rel?: string | undefined;
     target?: string | undefined;
   }
@@ -1802,28 +1709,22 @@ declare namespace JSX {
   interface IframeHTMLAttributes<T extends EventTarget = HTMLIFrameElement>
     extends HTMLAttributes<T> {
     allow?: string | undefined;
-    allowFullScreen?: boolean | undefined;
-    allowTransparency?: boolean | undefined;
+    allowfullscreen?: boolean | undefined;
+    allowtransparency?: boolean | undefined;
     /** @deprecated */
     frameborder?: number | string | undefined;
-    /** @deprecated */
-    frameBorder?: number | string | undefined;
     height?: number | string | undefined;
     loading?: "eager" | "lazy" | undefined;
-    /** @deprecated */
-    marginHeight?: number | undefined;
-    /** @deprecated */
-    marginWidth?: number | undefined;
+    marginheight?: number | undefined;
+    marginwidth?: number | undefined;
     name?: string | undefined;
     referrerpolicy?: HTMLAttributeReferrerPolicy | undefined;
-    referrerPolicy?: HTMLAttributeReferrerPolicy | undefined;
     sandbox?: string | undefined;
     /** @deprecated */
     scrolling?: string | undefined;
     seamless?: boolean | undefined;
     src?: string | undefined;
     srcdoc?: string | undefined;
-    srcDoc?: string | undefined;
     width?: number | string | undefined;
   }
 
@@ -1833,20 +1734,15 @@ declare namespace JSX {
     extends HTMLAttributes<T> {
     alt?: string | undefined;
     crossorigin?: HTMLAttributeCrossOrigin;
-    crossOrigin?: HTMLAttributeCrossOrigin;
     decoding?: "async" | "auto" | "sync" | undefined;
     fetchpriority?: "high" | "auto" | "low" | undefined;
-    fetchPriority?: "high" | "auto" | "low" | undefined;
     height?: number | string | undefined;
     loading?: "eager" | "lazy" | undefined;
     referrerpolicy?: HTMLAttributeReferrerPolicy | undefined;
-    referrerPolicy?: HTMLAttributeReferrerPolicy | undefined;
     sizes?: string | undefined;
     src?: string | undefined;
     srcset?: string | undefined;
-    srcSet?: string | undefined;
     usemap?: string | undefined;
-    useMap?: string | undefined;
     width?: number | string | undefined;
   }
 
@@ -1880,13 +1776,12 @@ declare namespace JSX {
     accept?: string | undefined;
     alt?: string | undefined;
     autocomplete?: string | undefined;
-    autoComplete?: string | undefined;
     capture?: "user" | "environment" | undefined; // https://www.w3.org/TR/html-media-capture/#the-capture-attribute
     checked?: boolean | undefined;
-    defaultChecked?: boolean | undefined;
-    defaultValue?: string | number | undefined;
+    defaultchecked?: boolean | undefined;
+    defaultvalue?: string | number | undefined;
     disabled?: boolean | undefined;
-    enterKeyHint?:
+    enterkeyhint?:
       | "enter"
       | "done"
       | "go"
@@ -1897,24 +1792,17 @@ declare namespace JSX {
       | undefined;
     form?: string | undefined;
     formaction?: string | undefined;
-    formAction?: string | undefined;
     formenctype?: string | undefined;
-    formEncType?: string | undefined;
     formmethod?: string | undefined;
-    formMethod?: string | undefined;
     formnovalidate?: boolean | undefined;
-    formNoValidate?: boolean | undefined;
     formtarget?: string | undefined;
-    formTarget?: string | undefined;
     height?: number | string | undefined;
     indeterminate?: boolean | undefined;
     list?: string | undefined;
     max?: number | string | undefined;
     maxlength?: number | undefined;
-    maxLength?: number | undefined;
     min?: number | string | undefined;
     minlength?: number | undefined;
-    minLength?: number | undefined;
     multiple?: boolean | undefined;
     name?: string | undefined;
     pattern?: string | undefined;
@@ -1935,7 +1823,6 @@ declare namespace JSX {
     extends HTMLAttributes<T> {
     cite?: string | undefined;
     datetime?: string | undefined;
-    dateTime?: string | undefined;
   }
 
   interface KeygenHTMLAttributes<T extends EventTarget = HTMLUnknownElement>
@@ -1943,8 +1830,8 @@ declare namespace JSX {
     challenge?: string | undefined;
     disabled?: boolean | undefined;
     form?: string | undefined;
-    keyType?: string | undefined;
-    keyParams?: string | undefined;
+    keytype?: string | undefined;
+    keyparams?: string | undefined;
     name?: string | undefined;
   }
 
@@ -1952,7 +1839,6 @@ declare namespace JSX {
     extends HTMLAttributes<T> {
     for?: string | undefined;
     form?: string | undefined;
-    htmlFor?: string | undefined;
   }
 
   interface LiHTMLAttributes<T extends EventTarget = HTMLLIElement>
@@ -1964,22 +1850,17 @@ declare namespace JSX {
     extends HTMLAttributes<T> {
     as?: string | undefined;
     crossorigin?: HTMLAttributeCrossOrigin;
-    crossOrigin?: HTMLAttributeCrossOrigin;
     fetchpriority?: "high" | "low" | "auto" | undefined;
-    fetchPriority?: "high" | "low" | "auto" | undefined;
     href?: string | undefined;
     hreflang?: string | undefined;
-    hrefLang?: string | undefined;
     integrity?: string | undefined;
     media?: string | undefined;
-    imageSrcSet?: string | undefined;
+    imagesrcset?: string | undefined;
     referrerpolicy?: HTMLAttributeReferrerPolicy | undefined;
-    referrerPolicy?: HTMLAttributeReferrerPolicy | undefined;
     rel?: string | undefined;
     sizes?: string | undefined;
     type?: string | undefined;
     charset?: string | undefined;
-    charSet?: string | undefined;
   }
 
   interface MapHTMLAttributes<T extends EventTarget = HTMLMapElement>
@@ -1990,14 +1871,14 @@ declare namespace JSX {
   interface MarqueeHTMLAttributes<T extends EventTarget = HTMLMarqueeElement>
     extends HTMLAttributes<T> {
     behavior?: "scroll" | "slide" | "alternate" | undefined;
-    bgColor?: string | undefined;
+    bgcolor?: string | undefined;
     direction?: "left" | "right" | "up" | "down" | undefined;
     height?: number | string | undefined;
     hspace?: number | string | undefined;
     loop?: number | string | undefined;
-    scrollAmount?: number | string | undefined;
-    scrollDelay?: number | string | undefined;
-    trueSpeed?: boolean | undefined;
+    scrollamount?: number | string | undefined;
+    scrolldelay?: number | string | undefined;
+    truespeed?: boolean | undefined;
     vspace?: number | string | undefined;
     width?: number | string | undefined;
   }
@@ -2005,25 +1886,21 @@ declare namespace JSX {
   interface MediaHTMLAttributes<T extends EventTarget = HTMLMediaElement>
     extends HTMLAttributes<T> {
     autoplay?: boolean | undefined;
-    autoPlay?: boolean | undefined;
     controls?: boolean | undefined;
     controlslist?: string | undefined;
-    controlsList?: string | undefined;
     crossorigin?: HTMLAttributeCrossOrigin;
-    crossOrigin?: HTMLAttributeCrossOrigin;
-    currentTime?: number | undefined;
-    defaultMuted?: boolean | undefined;
-    defaultPlaybackRate?: number | undefined;
+    currenttime?: number | undefined;
+    defaultmuted?: boolean | undefined;
+    defaultplaybackrate?: number | undefined;
     disableremoteplayback?: boolean | undefined;
-    disableRemotePlayback?: boolean | undefined;
     loop?: boolean | undefined;
-    mediaGroup?: string | undefined;
+    mediagroup?: string | undefined;
     muted?: boolean | undefined;
-    playbackRate?: number | undefined;
+    playbackrate?: number | undefined;
     preload?: "auto" | "metadata" | "none" | undefined;
-    preservesPitch?: boolean | undefined;
+    preservespitch?: boolean | undefined;
     src?: string | undefined;
-    srcObject?: MediaStream | MediaSource | Blob | File | null;
+    srcobject?: MediaStream | MediaSource | Blob | File | null;
     volume?: string | number | undefined;
   }
 
@@ -2035,10 +1912,8 @@ declare namespace JSX {
   interface MetaHTMLAttributes<T extends EventTarget = HTMLMetaElement>
     extends HTMLAttributes<T> {
     charset?: string | undefined;
-    charSet?: string | undefined;
     content?: string | undefined;
     "http-equiv"?: string | undefined;
-    httpEquiv?: string | undefined;
     name?: string | undefined;
     media?: string | undefined;
   }
@@ -2056,7 +1931,7 @@ declare namespace JSX {
 
   interface ObjectHTMLAttributes<T extends EventTarget = HTMLObjectElement>
     extends HTMLAttributes<T> {
-    classID?: string | undefined;
+    classid?: string | undefined;
     data?: string | undefined;
     form?: string | undefined;
     height?: number | string | undefined;
@@ -2093,7 +1968,6 @@ declare namespace JSX {
     extends HTMLAttributes<T> {
     for?: string | undefined;
     form?: string | undefined;
-    htmlFor?: string | undefined;
     name?: string | undefined;
   }
 
@@ -2119,16 +1993,11 @@ declare namespace JSX {
     async?: boolean | undefined;
     /** @deprecated */
     charset?: string | undefined;
-    /** @deprecated */
-    charSet?: string | undefined;
     crossorigin?: HTMLAttributeCrossOrigin;
-    crossOrigin?: HTMLAttributeCrossOrigin;
     defer?: boolean | undefined;
     integrity?: string | undefined;
     nomodule?: boolean | undefined;
-    noModule?: boolean | undefined;
     referrerpolicy?: HTMLAttributeReferrerPolicy | undefined;
-    referrerPolicy?: HTMLAttributeReferrerPolicy | undefined;
     src?: string | undefined;
     type?: string | undefined;
   }
@@ -2136,8 +2005,7 @@ declare namespace JSX {
   interface SelectHTMLAttributes<T extends EventTarget = HTMLSelectElement>
     extends HTMLAttributes<T> {
     autocomplete?: string | undefined;
-    autoComplete?: string | undefined;
-    defaultValue?: string | number | undefined;
+    defaultvalue?: string | number | undefined;
     disabled?: boolean | undefined;
     form?: string | undefined;
     multiple?: boolean | undefined;
@@ -2160,7 +2028,6 @@ declare namespace JSX {
     sizes?: string | undefined;
     src?: string | undefined;
     srcset?: string | undefined;
-    srcSet?: string | undefined;
     type?: string | undefined;
     width?: number | string | undefined;
   }
@@ -2174,8 +2041,8 @@ declare namespace JSX {
 
   interface TableHTMLAttributes<T extends EventTarget = HTMLTableElement>
     extends HTMLAttributes<T> {
-    cellPadding?: string | undefined;
-    cellSpacing?: string | undefined;
+    cellpadding?: string | undefined;
+    cellspacing?: string | undefined;
     summary?: string | undefined;
     width?: number | string | undefined;
   }
@@ -2184,10 +2051,8 @@ declare namespace JSX {
     extends HTMLAttributes<T> {
     align?: "left" | "center" | "right" | "justify" | "char" | undefined;
     colspan?: number | undefined;
-    colSpan?: number | undefined;
     headers?: string | undefined;
     rowspan?: number | undefined;
-    rowSpan?: number | undefined;
     scope?: string | undefined;
     abbr?: string | undefined;
     height?: number | string | undefined;
@@ -2198,19 +2063,16 @@ declare namespace JSX {
   interface TextareaHTMLAttributes<T extends EventTarget = HTMLTextAreaElement>
     extends HTMLAttributes<T> {
     autocomplete?: string | undefined;
-    autoComplete?: string | undefined;
     cols?: number | undefined;
-    defaultValue?: string | number | undefined;
-    dirName?: string | undefined;
+    defaultvalue?: string | number | undefined;
+    dirname?: string | undefined;
     disabled?: boolean | undefined;
     form?: string | undefined;
     maxlength?: number | undefined;
-    maxLength?: number | undefined;
     minlength?: number | undefined;
-    minLength?: number | undefined;
     name?: string | undefined;
     placeholder?: string | undefined;
-    readOnly?: boolean | undefined;
+    readonly?: boolean | undefined;
     required?: boolean | undefined;
     rows?: number | undefined;
     value?: string | number | undefined;
@@ -2222,10 +2084,8 @@ declare namespace JSX {
     extends HTMLAttributes<T> {
     align?: "left" | "center" | "right" | "justify" | "char" | undefined;
     colspan?: number | undefined;
-    colSpan?: number | undefined;
     headers?: string | undefined;
     rowspan?: number | undefined;
-    rowSpan?: number | undefined;
     scope?: string | undefined;
     abbr?: string | undefined;
   }
@@ -2233,7 +2093,6 @@ declare namespace JSX {
   interface TimeHTMLAttributes<T extends EventTarget = HTMLTimeElement>
     extends HTMLAttributes<T> {
     datetime?: string | undefined;
-    dateTime?: string | undefined;
   }
 
   interface TrackHTMLAttributes<T extends EventTarget = HTMLTrackElement>
@@ -2242,15 +2101,13 @@ declare namespace JSX {
     kind?: string | undefined;
     label?: string | undefined;
     srclang?: string | undefined;
-    srcLang?: string | undefined;
   }
 
   interface VideoHTMLAttributes<T extends EventTarget = HTMLVideoElement>
     extends MediaHTMLAttributes<T> {
-    disablePictureInPicture?: boolean | undefined;
+    disablepictureinpicture?: boolean | undefined;
     height?: number | string | undefined;
     playsinline?: boolean | undefined;
-    playsInline?: boolean | undefined;
     poster?: string | undefined;
     width?: number | string | undefined;
   }
