@@ -68,6 +68,20 @@ export class VNode<P = EmptyObj> implements IVNode<P> {
       if (result === null) return "";
       return result[Symbol.toPrimitive]();
     } else if (isFunctionComponent(type)) {
+      if (type === Template) {
+        let s = ``;
+        // deno-lint-ignore no-explicit-any
+        const { exprs, templates } = props as any;
+        for (let i = 0; i < templates.length; i++) {
+          s += templates[i];
+
+          if (i < exprs.length) {
+            s += renderChild(exprs[i]);
+          }
+        }
+
+        return s;
+      }
       const result = type(props);
       if (result === null) return "";
       return result[Symbol.toPrimitive]();
@@ -143,19 +157,21 @@ function renderChild(child: JsxNode): string {
 
 export function createElement(
   type: string,
-  props: JSX.HTMLAttributes & JSX.SVGAttributes & Record<string, unknown> & {
-    children?: JsxNode;
-  },
+  props:
+    | null
+    | JSX.HTMLAttributes & JSX.SVGAttributes & Record<string, unknown> & {
+      children?: JsxNode;
+    },
   key?: string,
 ): VNode;
 export function createElement<P>(
   type: ComponentType<P>,
-  props: Attributes & P & { children?: JsxNode },
+  props: null | Attributes & P & { children?: JsxNode },
   key?: string,
 ): VNode<P>;
 export function createElement<P = EmptyObj>(
   type: string | ComponentType<P>,
-  props: P,
+  props: null | P,
   children?: JsxNode,
 ): VNode<P> {
   const normalizedProps: Record<string, unknown> = {};
@@ -181,26 +197,29 @@ export function createElement<P = EmptyObj>(
 
 export function jsx(
   type: string,
-  props: JSX.HTMLAttributes & JSX.SVGAttributes & Record<string, unknown> & {
-    children?: JsxNode;
-  },
+  props:
+    | null
+    | JSX.HTMLAttributes & JSX.SVGAttributes & Record<string, unknown> & {
+      children?: JsxNode;
+    },
   key?: string,
 ): VNode;
 export function jsx<P>(
   type: ComponentType<P>,
-  props: Attributes & P & { children?: JsxNode },
+  props: null | Attributes & P & { children?: JsxNode },
   key?: string,
 ): VNode<P>;
 // deno-lint-ignore no-explicit-any
 export function jsx<P extends Attributes = any>(
   type: string | ComponentType<P>,
-  props: P,
+  props: null | P,
   key: Attributes["key"],
 ): VNode<P> {
-  return new VNode(type, props, key);
+  return new VNode(type, props ?? {} as P, key);
 }
 
 export const jsxs = jsx;
+export const jsxDEV = jsx;
 
 export function Fragment(props: Attributes): JsxNode {
   return props.children;
@@ -227,4 +246,45 @@ export function jsxTemplate(
     { templates: templates as any, exprs },
     undefined,
   );
+}
+
+export function jsxAttr(name: string, value: unknown): string {
+  if (
+    name === "key" ||
+    value == null ||
+    value === false ||
+    typeof value === "function" ||
+    typeof value === "object"
+  ) {
+    return "";
+  }
+
+  if (value === true) return name;
+
+  return `${encodeEntities(name)}="${encodeEntities(String(value))}"`;
+}
+
+export function jsxEscape(
+  value: unknown,
+): string | null | VNode | Array<string | null | VNode> {
+  if (
+    value == null ||
+    typeof value === "boolean" ||
+    typeof value === "function"
+  ) {
+    return null;
+  }
+
+  if (typeof value === "object") {
+    if (isValidElement(value)) return value;
+
+    if (Array.isArray(value)) {
+      for (let i = 0; i < value.length; i++) {
+        value[i] = jsxEscape(value[i]);
+      }
+      return value;
+    }
+  }
+
+  return encodeEntities("" + value);
 }
