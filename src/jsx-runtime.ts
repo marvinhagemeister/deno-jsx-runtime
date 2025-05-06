@@ -2,6 +2,7 @@ import type {
   Attributes,
   ComponentClass,
   ComponentType,
+  CustomDOMAttributes,
   FunctionComponent,
   JSXInternal,
   JSXNode,
@@ -83,10 +84,13 @@ export class VNode<P = any> implements IVNode<P> {
         }
 
         return s;
+      } else if (type === Fragment && isDangerousProps(props)) {
+        const raw = props.dangerouslySetInnerHTML?.__html ?? "";
+        return raw;
       }
+
       const result = type(props);
-      if (result === null) return "";
-      return result[Symbol.toPrimitive]();
+      return renderChild(result);
     } else if (typeof type === "string") {
       let s = `<${this.type}`;
 
@@ -94,7 +98,9 @@ export class VNode<P = any> implements IVNode<P> {
       const keys = Object.keys(props);
       for (let i = 0; i < keys.length; i++) {
         const name = keys[i];
-        if (name === "children") continue;
+        if (name === "children" || name === "dangerouslySetInnerHTML") {
+          continue;
+        }
 
         // deno-lint-ignore no-explicit-any
         const value = (props as any)[name];
@@ -108,8 +114,8 @@ export class VNode<P = any> implements IVNode<P> {
         s += ` ${escape(name)}="${escape(String(value))}"`;
       }
 
+      s += ">";
       if (VOID_ELEMENTS.has(type)) {
-        s += ">";
         return s;
       }
 
@@ -230,9 +236,12 @@ export function jsx<P extends Attributes = any>(
 export const jsxs = jsx;
 export const jsxDEV = jsx;
 
-export function Fragment(props: Attributes): JSXNode {
+export const Fragment: FunctionComponent<
+  // deno-lint-ignore no-explicit-any
+  { children?: any } & CustomDOMAttributes
+> = (props) => {
   return props.children;
-}
+};
 
 export function isValidElement(vnode: unknown): vnode is VNode {
   return vnode instanceof VNode && vnode.$$typeof === $$_TYPEOF;
@@ -260,6 +269,7 @@ export function jsxTemplate(
 export function jsxAttr(name: string, value: unknown): string {
   if (
     name === "key" ||
+    name === "ref" ||
     value == null ||
     value === false ||
     typeof value === "function" ||

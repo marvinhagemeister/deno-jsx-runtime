@@ -11,7 +11,7 @@
       "deno.window",
       "dom"
     ],
-    "jsx": "precompile",
+    "jsx": "react-jsx",
     "jsxImportSource": "@marvinh-test/raw-jsx-runtime"
   },
   "imports": {
