@@ -59,89 +59,89 @@ export class VNode<P = any> implements IVNode<P> {
   ) {}
 
   [Symbol.toPrimitive](): string {
-    return this.#renderToString();
+    return renderToString(this);
   }
+}
 
-  #renderToString(): string {
-    const { type, props } = this;
+function renderToString<P>(vnode: VNode<P>) {
+  const { type, props } = vnode;
 
-    if (isComponentClass(type)) {
-      const component = new type(props);
-      const result = component.render();
-      if (result === null) return "";
-      return result[Symbol.toPrimitive]();
-    } else if (isFunctionComponent(type)) {
-      if (type === Template) {
-        let s = ``;
-        // deno-lint-ignore no-explicit-any
-        const { exprs, templates } = props as any;
-        for (let i = 0; i < templates.length; i++) {
-          s += templates[i];
+  if (isComponentClass(type)) {
+    const component = new type(props);
+    const result = component.render();
+    if (result === null) return "";
+    return result[Symbol.toPrimitive]();
+  } else if (isFunctionComponent(type)) {
+    if (type === Template) {
+      let s = ``;
+      // deno-lint-ignore no-explicit-any
+      const { exprs, templates } = props as any;
+      for (let i = 0; i < templates.length; i++) {
+        s += templates[i];
 
-          if (i < exprs.length) {
-            s += renderChild(exprs[i]);
-          }
+        if (i < exprs.length) {
+          s += renderChild(exprs[i]);
         }
-
-        return s;
-      } else if (type === Fragment && isDangerousProps(props)) {
-        const raw = props.dangerouslySetInnerHTML?.__html ?? "";
-        return raw;
       }
 
-      const result = type(props);
-      return renderChild(result);
-    } else if (typeof type === "string") {
-      let s = `<${this.type}`;
-
-      // Attributes
-      const keys = Object.keys(props);
-      for (let i = 0; i < keys.length; i++) {
-        const name = keys[i];
-        if (name === "children" || name === "dangerouslySetInnerHTML") {
-          continue;
-        }
-
-        // deno-lint-ignore no-explicit-any
-        const value = (props as any)[name];
-
-        if (
-          value === null || value === undefined || typeof value === "function"
-        ) {
-          continue;
-        }
-
-        s += ` ${escape(name)}="${escape(String(value))}"`;
-      }
-
-      s += ">";
-      if (VOID_ELEMENTS.has(type)) {
-        return s;
-      }
-
-      if (isDangerousProps(props)) {
-        const raw = props.dangerouslySetInnerHTML?.__html ?? "";
-        return `${s}${raw}</${type}>`;
-      }
-
-      // Children
-      if ("children" in props) {
-        // deno-lint-ignore no-explicit-any
-        const children = props.children as any;
-        s += renderChild(children);
-      }
-
-      return `${s}</${type}>`;
+      return s;
+    } else if (type === Fragment && isDangerousProps(props)) {
+      const raw = props.dangerouslySetInnerHTML?.__html ?? "";
+      return raw;
     }
 
-    return "";
+    const result = type(props);
+    return renderChild(result);
+  } else if (typeof type === "string") {
+    let s = `<${type}`;
+
+    // Attributes
+    const keys = Object.keys(props);
+    for (let i = 0; i < keys.length; i++) {
+      const name = keys[i];
+      if (name === "children" || name === "dangerouslySetInnerHTML") {
+        continue;
+      }
+
+      // deno-lint-ignore no-explicit-any
+      const value = (props as any)[name];
+
+      if (
+        value === null || value === undefined || typeof value === "function"
+      ) {
+        continue;
+      }
+
+      s += ` ${escape(name)}="${escape(String(value))}"`;
+    }
+
+    s += ">";
+    if (VOID_ELEMENTS.has(type)) {
+      return s;
+    }
+
+    if (isDangerousProps(props)) {
+      const raw = props.dangerouslySetInnerHTML?.__html ?? "";
+      return `${s}${raw}</${type}>`;
+    }
+
+    // Children
+    if ("children" in props) {
+      // deno-lint-ignore no-explicit-any
+      const children = props.children as any;
+      s += renderChild(children);
+    }
+
+    return `${s}</${type}>`;
   }
+
+  return "";
 }
 
 function renderChild(child: JSXNode): string {
   if (
     child === null || child === undefined || child === false ||
-    child === true
+    child === true || typeof child === "function"
   ) {
     return "";
   } else if (

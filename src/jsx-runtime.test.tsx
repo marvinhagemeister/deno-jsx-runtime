@@ -164,3 +164,22 @@ Deno.test("render - Fragments", () => {
   expect(String(<>foo</>)).toEqual("foo");
   expect(String(<>{"&><'\""}</>)).toEqual("&amp;&gt;&lt;&#39;&quot;");
 });
+
+Deno.test("render - ignore function attribute values", () => {
+  let vnode = createElement("button", { type: "button", onclick: () => {} });
+  expect(String(vnode)).toEqual('<button type="button"></button>');
+
+  vnode = jsxTemplate`<button type="button"${
+    jsxAttr("onclick", () => {})
+  }></button>`;
+  expect(String(vnode)).toEqual('<button type="button"></button>');
+});
+
+Deno.test("render - ignore function children", () => {
+  // deno-lint-ignore no-explicit-any
+  let vnode = createElement("div", null, (() => {}) as any);
+  expect(String(vnode)).toEqual("<div></div>");
+
+  vnode = jsxTemplate`<div>${jsxEscape(() => {})}</div>`;
+  expect(String(vnode)).toEqual("<div></div>");
+});
